@@ -9,3 +9,12 @@ var team1 = [
     ]
 
 var g = new Game(team1, team2)
+
+g.playTurn()
+
+
+process.on('SIGINT', function () {
+  console.log(JSON.stringify(g.team1, true, 2))
+  console.log(JSON.stringify(g.team2, true, 2))
+  process.exit()
+})
